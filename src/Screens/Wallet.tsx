@@ -9,7 +9,6 @@ const Wallet = () => {
       <View style={styles.appLogoContainer}>
         <Image source={Images.appLogo} style={styles.appLogoImage} />
       </View>
-      <Text>wallet</Text>
     </View>
   );
 };

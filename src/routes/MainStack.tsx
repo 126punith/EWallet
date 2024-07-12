@@ -71,7 +71,7 @@ function BottomTabNavigator() {
           height: 90,
           borderRadius: 20,
           backgroundColor: 'transparent',
-        //   borderColor: Color.primary,
+          //   borderColor: Color.primary,
           elevation: 0,
         },
         tabBarShowLabel: false,

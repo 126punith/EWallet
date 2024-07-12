@@ -3,6 +3,7 @@ import {
   CardStyleInterpolators,
   createStackNavigator,
 } from '@react-navigation/stack';
+import SignIn from '../Screens/SignIn';
 // import SignInScreen from '@screens/authentication/SignInScreen/SignInScreen';
 
 const Stack = createStackNavigator();
@@ -13,11 +14,11 @@ const AuthStack: FC = () => {
       screenOptions={{
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}>
-      {/* <Stack.Screen
+      <Stack.Screen
         name="Sign In"
-        component={SignInScreen}
+        component={SignIn}
         options={{headerShown: false}}
-      /> */}
+      />
     </Stack.Navigator>
   );
 };

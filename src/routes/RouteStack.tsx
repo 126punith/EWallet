@@ -6,6 +6,7 @@ import {
 import {NavigationContainer} from '@react-navigation/native';
 
 import MainStack from '../routes/MainStack';
+import AuthStack from './AuthStack';
 
 const Stack = createStackNavigator();
 const RootStack: FC = () => {
@@ -14,12 +15,13 @@ const RootStack: FC = () => {
       <Stack.Navigator
         screenOptions={{
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          animationEnabled: false,
         }}>
-        {/* <Stack.Screen
+        <Stack.Screen
           name="Auth"
           component={AuthStack}
           options={{ headerShown: false }}
-        /> */}
+        />
         <Stack.Screen
           name="Main"
           component={MainStack}

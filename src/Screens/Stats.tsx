@@ -9,7 +9,6 @@ const Stats = () => {
       <View style={styles.appLogoContainer}>
         <Image source={Images.appLogo} style={styles.appLogoImage} />
       </View>
-      <Text>Stats</Text>
     </View>
   );
 };
