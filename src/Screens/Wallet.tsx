@@ -1,10 +1,14 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Color from '../Constants/Color';
+import Images from '../assets/Images';
 
 const Wallet = () => {
   return (
     <View style={styles.container}>
+      <View style={styles.appLogoContainer}>
+        <Image source={Images.appLogo} style={styles.appLogoImage} />
+      </View>
       <Text>wallet</Text>
     </View>
   );
@@ -21,5 +25,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 20,
     gap: 15,
+  },
+  appLogoContainer: {position: 'absolute', left: '50%', top: '-10'},
+  appLogoImage: {
+    width: 53,
+    height: 33,
+    resizeMode: 'cover',
   },
 });

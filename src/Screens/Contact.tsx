@@ -1,118 +1,132 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  StatusBar,
+  Image,
+} from 'react-native';
 import React, {useState} from 'react';
 import Color from '../Constants/Color';
 import LinearGradient from 'react-native-linear-gradient';
+import Images from '../assets/Images';
 
 const Contact = () => {
   // background: linear-gradient(114.15deg, #0DA6C2 20.67%, #0E39C6 89.64%);
 
   const [selectedField, setSelectedField] = useState('Access');
   return (
-    <View style={styles.container}>
-      <View style={{alignSelf: 'flex-start'}}>
-        <Text style={styles.titleText}>Statistics</Text>
-      </View>
-      <View style={styles.titleContainer}>
-        {selectedField === 'Access' ? (
-          <LinearGradient
-            useAngle={true}
-            angle={114.15}
-            start={{x: 0.0, y: 0.2067}}
-            end={{x: 0.8964, y: 1.0}}
-            locations={[0, 0.95]}
-            colors={['#0DA6C2', '#0E39C6']}
-            style={styles.titleBtn}>
+    <>
+      <StatusBar backgroundColor={Color.primary} />
+      <View style={styles.container}>
+        <View style={styles.appLogoContainer}>
+          <Image source={Images.appLogo} style={styles.appLogoImage} />
+        </View>
+        <View style={{alignSelf: 'flex-start'}}>
+          <Text style={styles.titleText}>Statistics</Text>
+        </View>
+        <View style={styles.titleContainer}>
+          {selectedField === 'Access' ? (
+            <LinearGradient
+              useAngle={true}
+              angle={114.15}
+              start={{x: 0.0, y: 0.2067}}
+              end={{x: 0.8964, y: 1.0}}
+              locations={[0, 0.95]}
+              colors={['#0DA6C2', '#0E39C6']}
+              style={styles.titleBtn}>
+              <TouchableOpacity
+                style={styles.titleBtn}
+                onPress={() => {
+                  setSelectedField('Access');
+                }}>
+                <Text style={styles.titleBtnText}> Access</Text>
+              </TouchableOpacity>
+            </LinearGradient>
+          ) : (
             <TouchableOpacity
-              style={styles.titleBtn}
+              style={[
+                styles.titleBtn,
+                styles.btnDarkBGcolor,
+                {
+                  borderTopLeftRadius: 15,
+                  borderBottomLeftRadius: 15,
+                },
+              ]}
               onPress={() => {
                 setSelectedField('Access');
               }}>
-              <Text style={styles.titleBtnText}> Access</Text>
+              <Text style={[styles.titleBtnText, styles.btnDarkBGcolor]}>
+                {' '}
+                Access
+              </Text>
             </TouchableOpacity>
-          </LinearGradient>
-        ) : (
-          <TouchableOpacity
-            style={[
-              styles.titleBtn,
-              styles.btnDarkBGcolor,
-              {
-                borderTopLeftRadius: 15,
-                borderBottomLeftRadius: 15,
-              },
-            ]}
-            onPress={() => {
-              setSelectedField('Access');
-            }}>
-            <Text style={[styles.titleBtnText, styles.btnDarkBGcolor]}>
-              {' '}
-              Access
-            </Text>
-          </TouchableOpacity>
-        )}
-        {selectedField === 'Consent' ? (
-          <LinearGradient
-            useAngle={true}
-            angle={114.15}
-            start={{x: 0.0, y: 0.2067}}
-            end={{x: 0.8964, y: 1.0}}
-            locations={[0, 0.95]}
-            colors={['#0DA6C2', '#0E39C6']}
-            style={styles.titleBtn}>
+          )}
+          {selectedField === 'Consent' ? (
+            <LinearGradient
+              useAngle={true}
+              angle={114.15}
+              start={{x: 0.0, y: 0.2067}}
+              end={{x: 0.8964, y: 1.0}}
+              locations={[0, 0.95]}
+              colors={['#0DA6C2', '#0E39C6']}
+              style={styles.titleBtn}>
+              <TouchableOpacity
+                style={styles.titleBtn}
+                onPress={() => {
+                  setSelectedField('Consent');
+                }}>
+                <Text style={styles.titleBtnText}> Consent</Text>
+              </TouchableOpacity>
+            </LinearGradient>
+          ) : (
             <TouchableOpacity
-              style={styles.titleBtn}
+              style={[styles.titleBtn, styles.btnDarkBGcolor]}
               onPress={() => {
                 setSelectedField('Consent');
               }}>
-              <Text style={styles.titleBtnText}> Consent</Text>
+              <Text style={[styles.titleBtnText, styles.btnDarkBGcolor]}>
+                {' '}
+                Consent
+              </Text>
             </TouchableOpacity>
-          </LinearGradient>
-        ) : (
-          <TouchableOpacity
-            style={[styles.titleBtn, styles.btnDarkBGcolor]}
-            onPress={() => {
-              setSelectedField('Consent');
-            }}>
-            <Text style={[styles.titleBtnText, styles.btnDarkBGcolor]}>
-              {' '}
-              Consent
-            </Text>
-          </TouchableOpacity>
-        )}
-        {selectedField === 'Approve' ? (
-          <LinearGradient
-            useAngle={true}
-            angle={114.15}
-            start={{x: 0.0, y: 0.2067}}
-            end={{x: 0.8964, y: 1.0}}
-            locations={[0, 0.95]}
-            colors={['#0DA6C2', '#0E39C6']}
-            style={styles.titleBtn}>
+          )}
+          {selectedField === 'Approve' ? (
+            <LinearGradient
+              useAngle={true}
+              angle={114.15}
+              start={{x: 0.0, y: 0.2067}}
+              end={{x: 0.8964, y: 1.0}}
+              locations={[0, 0.95]}
+              colors={['#0DA6C2', '#0E39C6']}
+              style={styles.titleBtn}>
+              <TouchableOpacity
+                style={styles.titleBtn}
+                onPress={() => {
+                  setSelectedField('Approve');
+                }}>
+                <Text style={styles.titleBtnText}> Approve</Text>
+              </TouchableOpacity>
+            </LinearGradient>
+          ) : (
             <TouchableOpacity
-              style={styles.titleBtn}
+              style={[
+                styles.titleBtn,
+                styles.btnDarkBGcolor,
+                {
+                  borderTopRightRadius: 15,
+                  borderBottomRightRadius: 15,
+                },
+              ]}
               onPress={() => {
                 setSelectedField('Approve');
               }}>
               <Text style={styles.titleBtnText}> Approve</Text>
             </TouchableOpacity>
-          </LinearGradient>
-        ) : (
-          <TouchableOpacity
-            style={[
-              styles.titleBtn,
-              styles.btnDarkBGcolor,
-              {
-                borderTopRightRadius: 15,
-                borderBottomRightRadius: 15,
-              },
-            ]}
-            onPress={() => {
-              setSelectedField('Approve');
-            }}>
-            <Text style={styles.titleBtnText}> Approve</Text>
-          </TouchableOpacity>
-        )}
+          )}
+        </View>
       </View>
-    </View>
+    </>
   );
 };
 
@@ -157,5 +171,11 @@ const styles = StyleSheet.create({
     backgroundColor: Color.darkBlue,
     flexGrow: 1,
     borderRadius: 0,
+  },
+  appLogoContainer: {position: 'absolute', left: '50%', top: '-10'},
+  appLogoImage: {
+    width: 53,
+    height: 33,
+    resizeMode: 'cover',
   },
 });

@@ -3,4 +3,5 @@ export default {
   wallet: require('../assets/wallet.png'),
   stats: require('../assets/graph.png'),
   profile: require('../assets/Profile.png'),
+  appLogo: require('../assets/appLogo.png'),
 };
